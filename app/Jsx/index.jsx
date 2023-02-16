@@ -1,15 +1,21 @@
 import { PDFDocument } from "pdf-lib";
-import * as PDFJS from "pdfjs-dist";
-
+// import * as Z from "pdfjs-dist";
+// import * as PDFJS from "pdfjs-dist/webpack";
+import { Document, Page, pdfjs as PDFJS } from "react-pdf";
+import pdfjsWorker from "pdfjs-dist/build/pdf.worker.entry";
+import QRCode from "qrcode";
 export const convertPdfToImages = async (file, qrCode) => {
   const pdfDoc = await PDFDocument.create();
 
-  PDFJS.GlobalWorkerOptions.workerSrc =
-    "https://mozilla.github.io/pdf.js/build/pdf.js";
+  // PDFJS.GlobalWorkerOptions.workerSrc =
+  //   "https://mozilla.github.io/pdf.js/build/pdf.worker.js";
+  PDFJS.GlobalWorkerOptions.workerSrc = pdfjsWorker;
+
 
   const images = [];
   const uri = URL.createObjectURL(file);
   console.log(uri);
+  console.log(file);
   const pdf = await PDFJS.getDocument({ url: uri }).promise;
   console.log(pdf);
   const canvas = document.createElement("canvas");
@@ -24,7 +30,7 @@ export const convertPdfToImages = async (file, qrCode) => {
     canvas.width = viewport.width;
     await page.render({ canvasContext: context, viewport: viewport }).promise;
     if (i === 0) {
-      context.drawImage(qrCode, 50, 50);
+      context.drawImage(canvas, 50, 50); // idhar canvas ke badle, qr code ka canvas dalna hai
     }
     images.push(canvas.toDataURL("image/png"));
     const pngImage = await pdfDoc.embedPng(images[i]);

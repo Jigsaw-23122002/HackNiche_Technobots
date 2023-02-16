@@ -22,14 +22,15 @@ export default function Upload() {
 
   const getQrcode = async () => {
     try {
-      const res = await axios.get("api/qrcode/", {
-        params: {
-          input: generateUuid(),
-        },
-      });
-      setResponse(res.data);
-      files[0] = await convertPdfToImages(files[0], response);
+      const res = await axios.get("https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=smit");
+      await setResponse(res.data);
+      console.log("response", response);
+      console.log("response", typeof(res.data));
+      
+      files[0] = await convertPdfToImages(files[0], "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=smit");
       console.log(files);
+      const pdf=files[0];
+
     } catch (error) {
       console.log(error);
     }

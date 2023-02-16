@@ -15,12 +15,15 @@
     "jspdf": "^2.5.1",
     "next": "13.1.6",
     "pdf-lib": "^1.17.1",
-    "pdfjs-dist": "^3.3.122",
+    "pdfjs-dist": "^2.6.347",
+    "qrcode": "^1.5.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-dropzone": "^14.2.3",
     "react-inlinesvg": "^3.0.1",
-    "web3.storage": "^4.4.0"
+    "react-pdf": "^6.2.2",
+    "web3.storage": "^4.4.0",
+    "worker-loader": "^3.0.8"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",
