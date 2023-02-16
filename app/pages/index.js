@@ -1,17 +1,23 @@
 import axios from "axios";
 import { useState } from "react";
 import SVG from "react-inlinesvg";
+import { useDropzone } from "react-dropzone";
 import { Web3Storage } from "web3.storage";
 
+let files = [];
+
 export default function Home() {
+  const { getRootProps, getInputProps } = useDropzone({});
   const [input, setInput] = useState(null);
+  const [cid, setCid] = useState("");
+  const [filename, setFilename] = useState("");
   const [response, setResponse] = useState(null);
-  const [file, setFile] = useState();
 
   function selectFile(e) {
-    setFile(e.target.files[0]);
+    files = [];
+    files.push(e.target.files[0]);
     setTimeout(() => {
-      console.log(file);
+      console.log(files);
     }, 1000);
   }
 
@@ -23,16 +29,20 @@ export default function Home() {
       );
     }
     const storage = new Web3Storage({ token });
-    console.log("Uploading 1 file.");
-    const cid = await storage.put(file);
-    console.log("Content added with CID:", cid);
+    const cid = await storage.put(files);
+    setCid(cid);
+    setFilename(files[0].name);
+    setTimeout(() => {
+      console.log(cid);
+      console.log(filename);
+    }, 1000);
   };
 
   const getQrcode = async () => {
     try {
       const res = await axios.get("api/qrcode/", {
         params: {
-          input: JSON.stringify({ email: input, password: "hsntas@1989" }),
+          input: `https://${cid}.ipfs.w3s.link/${filename}`,
         },
       });
       setResponse(res.data);
@@ -43,6 +53,47 @@ export default function Home() {
 
   return (
     <div className="flex flex-col relative bg-grey font-mono items-center min-h-screen border-t-2 border-active">
+      <div {...getRootProps({ className: "dropzone" })}>
+        <div className="flex items-center justify-center w-full my-8">
+          <label
+            htmlFor="dropzone-file"
+            className="flex flex-col items-center justify-center w-full h-35 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600"
+          >
+            <div className="flex flex-col items-center justify-center pt-5 pb-6">
+              <svg
+                aria-hidden="true"
+                className="w-10 h-10 mb-3 text-gray-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
+                ></path>
+              </svg>
+              <p className="mb-2 text-sm text-gray-500 dark:text-gray-400">
+                <span className="font-semibold">Click to upload</span> the
+                Memorandom of Association (MoA) of the organization
+              </p>
+              <p className="text-xs text-gray-500 dark:text-gray-400">
+                The files should be of PDF format ( size less than 100 KB )
+              </p>
+            </div>
+            <input
+              id="dropzone-file"
+              type="application/pdf"
+              className="hidden"
+              {...getInputProps()}
+              onChange={selectFile}
+            />
+          </label>
+        </div>
+      </div>
+      <button onClick={uploadDocument}>Upload</button>
       <h1 className="text-6xl font-bold text-primary mt-20">
         QR Code <span className="text-active">Generator</span>
       </h1>
