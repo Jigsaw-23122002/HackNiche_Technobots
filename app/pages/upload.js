@@ -1,45 +1,42 @@
-import axios from "axios";
 import { useState } from "react";
 import SVG from "react-inlinesvg";
 import { useDropzone } from "react-dropzone";
-import { Web3Storage } from "web3.storage";
+import axios from "axios";
+import { convertPdfToImages } from "../Jsx";
 
 let files = [];
 
-export default function Home() {
+export default function Upload() {
   const { getRootProps, getInputProps } = useDropzone({});
-  const [input, setInput] = useState(null);
-  const [cid, setCid] = useState("");
-  const [filename, setFilename] = useState("");
   const [response, setResponse] = useState(null);
 
   function selectFile(e) {
     files = [];
     files.push(e.target.files[0]);
-    setTimeout(() => {
-      console.log(files);
-    }, 1000);
+    getQrcode();
   }
 
-  const uploadDocument = async () => {
-    const token = process.env.NEXT_PUBLIC_WEB3STORAGE_API_TOKEN;
-    if (!token) {
-      return console.error(
-        "A token is needed. You can create one on https://web3.storage"
-      );
+  function generateUuid() {
+    return crypto.randomUUID();
+  }
+
+  const getQrcode = async () => {
+    try {
+      const res = await axios.get("api/qrcode/", {
+        params: {
+          input: generateUuid(),
+        },
+      });
+      setResponse(res.data);
+      files[0] = await convertPdfToImages(files[0], response);
+      console.log(files);
+    } catch (error) {
+      console.log(error);
     }
-    const storage = new Web3Storage({ token });
-    const cid = await storage.put(files);
-    setCid(cid);
-    setFilename(files[0].name);
-    setTimeout(() => {
-      console.log(cid);
-      console.log(filename);
-    }, 1000);
   };
 
   return (
-    <div className="flex flex-col relative bg-grey font-mono items-center min-h-screen border-t-2 border-active">
+    <div>
       <div {...getRootProps({ className: "dropzone" })}>
         <div className="flex items-center justify-center w-full my-8">
           <label
@@ -80,13 +77,6 @@ export default function Home() {
           </label>
         </div>
       </div>
-      <button onClick={uploadDocument}>Upload</button>
-      <button
-        className="mt-6 p-4 bg-active hover:opacity-90 rounded text-primary font-bold inline-flex"
-        onClick={() => getQrcode()}
-      >
-        Generate QR Code
-      </button>
       {response && (
         <div className="mt-10 bg-active">
           <SVG src={response} />
