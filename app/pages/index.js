@@ -23,8 +23,8 @@ export default function Home() {
       );
     }
     const storage = new Web3Storage({ token });
-    console.log(`Uploading ${files.length} files`);
-    const cid = await storage.put(files);
+    console.log(`Uploading 1 files`);
+    const cid = await storage.put(file);
     console.log("Content added with CID:", cid);
   };
 
