@@ -1,7 +1,7 @@
 ---
 banner:
-  title: Let us solve your critical website development challenges
-  content: Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam nihil enim maxime corporis cumque <br/> totam aliquid nam sint inventore optio modi neque laborum officiis necessitatibus
+  title: Digital Verification of Certificates
+  content: Lakhs of people are getting degrees year after year. Due to the lack of effective anti-forge mechanisms, events that cause the graduation certificate to be forged often do not get noticed. In order to solve the problem of counterfeiting certificates, the digital certificate system should be based on blockchain technology.
   image: /images/banner-art.svg
   button:
     label: "Contact Us"
@@ -43,36 +43,36 @@ services:
       label: Check it out
       link: /contact
 
-  - title: "It is a privately owned Information and cyber security company"
-    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat tristique eget amet, tempus eu at consecttur. Leo facilisi nunc viverra tellus. Ac laoreet sit vel consquat. consectetur adipiscing elit. Consequat tristique eget amet, tempus eu at consecttur. Leo facilisi nunc viverra tellus. Ac laoreet sit vel consquat."
-    images: 
-      - "/images/service-slide-1.png"
-    button:
-      enable: true
-      label: Check it out
-      link: /contact
+  # - title: "It is a privately owned Information and cyber security company"
+  #   content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat tristique eget amet, tempus eu at consecttur. Leo facilisi nunc viverra tellus. Ac laoreet sit vel consquat. consectetur adipiscing elit. Consequat tristique eget amet, tempus eu at consecttur. Leo facilisi nunc viverra tellus. Ac laoreet sit vel consquat."
+  #   images: 
+  #     - "/images/service-slide-1.png"
+  #   button:
+  #     enable: true
+  #     label: Check it out
+  #     link: /contact
   
-  - title: "It’s a team of experienced and skilled people with distributions"
-    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat tristique eget amet, tempus eu at consecttur. Leo facilisi nunc viverra tellus. Ac laoreet sit vel consquat. consectetur adipiscing elit. Consequat tristique eget amet, tempus eu at consecttur. Leo facilisi nunc viverra tellus. Ac laoreet sit vel consquat."
-    images:
-      - "/images/service-slide-1.png"
-      - "/images/service-slide-2.png"
-      - "/images/service-slide-3.png"
-    button:
-      enable: true
-      label: Check it out
-      link: /contact
+  # - title: "It’s a team of experienced and skilled people with distributions"
+  #   content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat tristique eget amet, tempus eu at consecttur. Leo facilisi nunc viverra tellus. Ac laoreet sit vel consquat. consectetur adipiscing elit. Consequat tristique eget amet, tempus eu at consecttur. Leo facilisi nunc viverra tellus. Ac laoreet sit vel consquat."
+  #   images:
+  #     - "/images/service-slide-1.png"
+  #     - "/images/service-slide-2.png"
+  #     - "/images/service-slide-3.png"
+  #   button:
+  #     enable: true
+  #     label: Check it out
+  #     link: /contact
 
-  - title: "A company standing different from others"
-    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat tristique eget amet, tempus eu at consecttur. Leo facilisi nunc viverra tellus. Ac laoreet sit vel consquat. consectetur adipiscing elit. Consequat tristique eget amet, tempus eu at consecttur. Leo facilisi nunc viverra tellus. Ac laoreet sit vel consquat."
-    images:
-      - "/images/service-slide-1.png"
-      - "/images/service-slide-2.png"
-      - "/images/service-slide-3.png"
-    button:
-      enable: true
-      label: Check it out
-      link: /contact
+  # - title: "A company standing different from others"
+  #   content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat tristique eget amet, tempus eu at consecttur. Leo facilisi nunc viverra tellus. Ac laoreet sit vel consquat. consectetur adipiscing elit. Consequat tristique eget amet, tempus eu at consecttur. Leo facilisi nunc viverra tellus. Ac laoreet sit vel consquat."
+  #   images:
+  #     - "/images/service-slide-1.png"
+  #     - "/images/service-slide-2.png"
+  #     - "/images/service-slide-3.png"
+  #   button:
+  #     enable: true
+  #     label: Check it out
+  #     link: /contact
 
 # workflow
 workflow: 
