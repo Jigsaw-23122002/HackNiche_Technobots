@@ -28,8 +28,6 @@ export default function register() {
   };
 
   const register = async () => {
-    const res = await axios.get("/api/register");
-    console.log(res);
     try {
       const signer = await getProviderOrSigner(true);
       const contract = new Contract(CONTRACT_ADDRESS, CONTRACT_ABI, signer);

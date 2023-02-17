@@ -1,4 +1,4 @@
-export const CONTRACT_ADDRESS = "0x69fde4D34c4cfce6f3157e1F6AC2b80aED66956F";
+export const CONTRACT_ADDRESS = "0x7504F87F697846aEA8cF08B193f53c224A9f4C44";
 export const CONTRACT_ABI = [
   {
     inputs: [
@@ -19,40 +19,39 @@ export const CONTRACT_ABI = [
     type: "function",
   },
   {
-    inputs: [],
-    name: "emptyRequests",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "getPendingRequests",
+    inputs: [
+      {
+        internalType: "string",
+        name: "_email",
+        type: "string",
+      },
+    ],
+    name: "getUser",
     outputs: [
       {
         components: [
-          {
-            internalType: "uint256",
-            name: "id",
-            type: "uint256",
-          },
           {
             internalType: "string",
             name: "email",
             type: "string",
           },
           {
-            internalType: "bool",
-            name: "isSent",
-            type: "bool",
+            internalType: "string",
+            name: "password",
+            type: "string",
+          },
+          {
+            internalType: "address",
+            name: "wallet",
+            type: "address",
           },
         ],
-        internalType: "struct Request[]",
+        internalType: "struct User",
         name: "",
-        type: "tuple[]",
+        type: "tuple",
       },
     ],
-    stateMutability: "nonpayable",
+    stateMutability: "view",
     type: "function",
   },
   {
@@ -87,43 +86,12 @@ export const CONTRACT_ABI = [
             name: "wallet",
             type: "address",
           },
-          {
-            internalType: "string[]",
-            name: "uuid",
-            type: "string[]",
-          },
         ],
         internalType: "struct User",
         name: "",
         type: "tuple",
       },
     ],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "string",
-        name: "_email",
-        type: "string",
-      },
-    ],
-    name: "requestDocsByUser",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "uint256",
-        name: "index",
-        type: "uint256",
-      },
-    ],
-    name: "requestSatisfied",
-    outputs: [],
     stateMutability: "nonpayable",
     type: "function",
   },
@@ -149,42 +117,6 @@ export const CONTRACT_ABI = [
       },
     ],
     stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "string",
-        name: "_email",
-        type: "string",
-      },
-    ],
-    name: "userMadeRequests",
-    outputs: [
-      {
-        components: [
-          {
-            internalType: "uint256",
-            name: "id",
-            type: "uint256",
-          },
-          {
-            internalType: "string",
-            name: "email",
-            type: "string",
-          },
-          {
-            internalType: "bool",
-            name: "isSent",
-            type: "bool",
-          },
-        ],
-        internalType: "struct Request[]",
-        name: "",
-        type: "tuple[]",
-      },
-    ],
-    stateMutability: "nonpayable",
     type: "function",
   },
 ];
