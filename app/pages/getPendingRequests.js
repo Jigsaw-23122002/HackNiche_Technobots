@@ -7,6 +7,10 @@ import { Web3Storage } from "web3.storage";
 import Web3Modal from "web3modal";
 import { CONTRACT_ABI, CONTRACT_ADDRESS } from "../constants";
 import { createClient } from "@supabase/supabase-js";
+import NotFound from "@layouts/404";
+import Base from "@layouts/Baseof";
+import PostSingle2 from "@layouts/PostSingle2";
+import { markdownify } from "@lib/utils/textConverter";
 
 let files = [];
 let document_cid;
@@ -81,68 +85,80 @@ export default function Request() {
   if (auth === null) {
     return (
       <>
-        <div>Require to login</div>
+        <Base>
+          <section className="section">
+            <div className="container">
+              <div className="flex h-[40vh] items-center justify-center">
+                <div className="text-center">
+                  <h1 className="mb-4">Page not found</h1>
+                  {markdownify("Authentication required", "div", "content")}
+                </div>
+              </div>
+            </div>
+          </section>
+        </Base>
       </>
     );
   } else {
     return (
       <div>
-        <button onClick={() => getPendingRequests()}>
-          Get pending requests
-        </button>
-        {list.map((data) => {
-          return (
-            <div>
-              <p>{JSON.stringify(data)}</p>
-              <div {...getRootProps({ className: "dropzone" })}>
-                <div className="flex items-center justify-center w-full my-8">
-                  <label
-                    htmlFor="dropzone-file"
-                    className="flex flex-col items-center justify-center w-full h-35 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600"
-                  >
-                    <div className="flex flex-col items-center justify-center pt-5 pb-6">
-                      <svg
-                        aria-hidden="true"
-                        className="w-10 h-10 mb-3 text-gray-400"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
-                        ></path>
-                      </svg>
-                      <p className="mb-2 text-sm text-gray-500 dark:text-gray-400">
-                        <span className="font-semibold">Click to upload</span>{" "}
-                        the requested document
-                      </p>
-                      <p className="text-xs text-gray-500 dark:text-gray-400">
-                        The files should be of PDF format ( size less than 100
-                        KB )
-                      </p>
-                    </div>
-                    <input
-                      id="dropzone-file"
-                      type="application/pdf"
-                      className="hidden"
-                      {...getInputProps()}
-                      onChange={selectFile}
-                    />
-                  </label>
+        <Base>
+          {list.map((data) => {
+            return (
+              <div className="">
+                <div>
+                  <PostSingle2
+                    timestamp={data.email}
+                    status={data.isSent}
+                    image={data.svg}
+                  />
                 </div>
+                <div {...getRootProps({ className: "dropzone" })}>
+                  <div className="my-8 flex w-full items-center justify-center">
+                    <label
+                      htmlFor="dropzone-file"
+                      className="h-35 dark:hover:bg-bray-800 flex w-full cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed border-gray-300 bg-gray-50 hover:bg-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:hover:border-gray-500 dark:hover:bg-gray-600"
+                    >
+                      <div className="flex flex-col items-center justify-center pt-5 pb-6">
+                        <svg
+                          aria-hidden="true"
+                          className="mb-3 h-10 w-10 text-gray-400"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
+                          ></path>
+                        </svg>
+                        <p className="mb-2 text-sm text-gray-500 dark:text-gray-400">
+                          <span className="font-semibold">Click to upload</span>{" "}
+                          the requested document
+                        </p>
+                        <p className="text-xs text-gray-500 dark:text-gray-400">
+                          The files should be of PDF format ( size less than 100
+                          KB )
+                        </p>
+                      </div>
+                      <input
+                        id="dropzone-file"
+                        type="application/pdf"
+                        className="hidden"
+                        {...getInputProps()}
+                        onChange={selectFile}
+                      />
+                    </label>
+                  </div>
+                </div>
+                <button onClick={() => uploadDocument(data.id)}>Issue</button>
               </div>
-              <button onClick={() => uploadDocument(data.id)}>Issue</button>
-            </div>
-          );
-        })}
-        <div>
-          <button onClick={() => getUser("harsh@gmail.com")}>getUser</button>
-        </div>
-        <div>{JSON.stringify(user)}</div>
+            );
+          })}
+        </Base>
       </div>
     );
   }
