@@ -4,7 +4,7 @@ let files = [];
 export default function Request() {
   return (
     <div>
-      <button>Request Docs</button>
+      <button>Request</button>
     </div>
   );
 }
