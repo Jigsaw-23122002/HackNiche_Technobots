@@ -60,10 +60,10 @@ export default function Request() {
 
   const getQrcode = async (uuid) => {
     try {
-      // const res = await axios.get("api/qrcode/", {
-      //   params: { input: `https://${document_cid}.ipfs.w3s.link/${filename}` },
-      // });
-      // setResponse(res.data);
+      const res = await axios.get("api/qrcode/", {
+        params: { input: `https://${document_cid}.ipfs.w3s.link/${filename}` },
+      });
+      setResponse(res.data);
       const update = await supabase
         .from("requests")
         .update({ isSent: true })
