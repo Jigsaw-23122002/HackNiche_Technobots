@@ -18,11 +18,15 @@
     },
     {
       "name": "Login",
-      "url": "/"
+      "url": "/login"
     },
     {
       "name": "FAQ",
       "url": "/faq"
+    },
+    {
+      "name": "Signup",
+      "url": "/signup"
     }
   ],
   "footer": [
