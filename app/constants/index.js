@@ -1,4 +1,4 @@
-export const CONTRACT_ADDRESS = "0x1b84ef5557C9731D277c148Bc1b9B661B4Ea7D4e";
+export const CONTRACT_ADDRESS = "0x69fde4D34c4cfce6f3157e1F6AC2b80aED66956F";
 export const CONTRACT_ABI = [
   {
     inputs: [
@@ -69,7 +69,35 @@ export const CONTRACT_ABI = [
       },
     ],
     name: "registerUser",
-    outputs: [],
+    outputs: [
+      {
+        components: [
+          {
+            internalType: "string",
+            name: "email",
+            type: "string",
+          },
+          {
+            internalType: "string",
+            name: "password",
+            type: "string",
+          },
+          {
+            internalType: "address",
+            name: "wallet",
+            type: "address",
+          },
+          {
+            internalType: "string[]",
+            name: "uuid",
+            type: "string[]",
+          },
+        ],
+        internalType: "struct User",
+        name: "",
+        type: "tuple",
+      },
+    ],
     stateMutability: "nonpayable",
     type: "function",
   },
@@ -160,3 +188,4 @@ export const CONTRACT_ABI = [
     type: "function",
   },
 ];
+export const RPC_URL = "https://alfajores-forno.celo-testnet.org";

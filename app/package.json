@@ -22,6 +22,7 @@
     "react-dropzone": "^14.2.3",
     "react-inlinesvg": "^3.0.1",
     "svg-to-img": "^2.0.9",
+    "web3": "^1.8.2",
     "web3.storage": "^4.4.0",
     "web3modal": "^1.9.12"
   },

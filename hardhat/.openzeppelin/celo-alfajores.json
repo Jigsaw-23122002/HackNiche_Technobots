@@ -9,12 +9,506 @@
       "address": "0x1b84ef5557C9731D277c148Bc1b9B661B4Ea7D4e",
       "txHash": "0xdd1db73e1c6bfaf7c4b1767eaf1f458777563199cb05b03d6ee0dd714a29d964",
       "kind": "transparent"
+    },
+    {
+      "address": "0xB2aDb75054362A6f5Fbe138a38Cc1410185d1142",
+      "txHash": "0x614e4487765c52eb80d8c47f948b55411ca0b2314a0596d6b8eee9333c28d45b",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x69fde4D34c4cfce6f3157e1F6AC2b80aED66956F",
+      "txHash": "0xff17031dad91f18b6df3c5097e883857ff138ae4f140caba1dea3e634aa66071",
+      "kind": "transparent"
     }
   ],
   "impls": {
     "1945c81e3f8663d0fd38f4b6ce7934283b169d453f02288e4008efc1a967b531": {
       "address": "0x656Cadfc51E257888dd523F854284Efcada18590",
       "txHash": "0x907a3f744720131c581536b709379d722a60e22606ad989a8c482c3f8ba84551",
+      "layout": {
+        "solcVersion": "0.8.17",
+        "storage": [
+          {
+            "label": "usersMap",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_mapping(t_string_memory_ptr,t_struct(User)11_storage)",
+            "contract": "Contract",
+            "src": "contracts\\Contract.sol:17"
+          },
+          {
+            "label": "userRequests",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_array(t_struct(Request)18_storage)dyn_storage",
+            "contract": "Contract",
+            "src": "contracts\\Contract.sol:18"
+          },
+          {
+            "label": "requests",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_array(t_struct(Request)18_storage)dyn_storage",
+            "contract": "Contract",
+            "src": "contracts\\Contract.sol:19"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_string_storage)dyn_storage": {
+            "label": "string[]",
+            "numberOfBytes": "32"
+          },
+          "t_array(t_struct(Request)18_storage)dyn_storage": {
+            "label": "struct Request[]",
+            "numberOfBytes": "32"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_string_memory_ptr,t_struct(User)11_storage)": {
+            "label": "mapping(string => struct User)",
+            "numberOfBytes": "32"
+          },
+          "t_string_memory_ptr": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_string_storage": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_struct(Request)18_storage": {
+            "label": "struct Request",
+            "members": [
+              {
+                "label": "id",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "email",
+                "type": "t_string_storage",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "isSent",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "2"
+              }
+            ],
+            "numberOfBytes": "96"
+          },
+          "t_struct(User)11_storage": {
+            "label": "struct User",
+            "members": [
+              {
+                "label": "email",
+                "type": "t_string_storage",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "password",
+                "type": "t_string_storage",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "wallet",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "uuid",
+                "type": "t_array(t_string_storage)dyn_storage",
+                "offset": 0,
+                "slot": "3"
+              }
+            ],
+            "numberOfBytes": "128"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          }
+        }
+      }
+    },
+    "76c129feb41c6f962c16be83605b4d70227fcb9f02cce95c34227d31010e53a5": {
+      "address": "0x8e6Fa807F0A525439a257111ac6E55d80C059Cc6",
+      "txHash": "0x4ade6d9b2dc28c7f19757656c3a0d63e580f2c1187529d9a21bd12900cd6e05a",
+      "layout": {
+        "solcVersion": "0.8.17",
+        "storage": [
+          {
+            "label": "usersMap",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_mapping(t_string_memory_ptr,t_struct(User)11_storage)",
+            "contract": "Contract",
+            "src": "contracts\\Contract.sol:17"
+          },
+          {
+            "label": "userRequests",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_array(t_struct(Request)18_storage)dyn_storage",
+            "contract": "Contract",
+            "src": "contracts\\Contract.sol:18"
+          },
+          {
+            "label": "requests",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_array(t_struct(Request)18_storage)dyn_storage",
+            "contract": "Contract",
+            "src": "contracts\\Contract.sol:19"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_string_storage)dyn_storage": {
+            "label": "string[]",
+            "numberOfBytes": "32"
+          },
+          "t_array(t_struct(Request)18_storage)dyn_storage": {
+            "label": "struct Request[]",
+            "numberOfBytes": "32"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_string_memory_ptr,t_struct(User)11_storage)": {
+            "label": "mapping(string => struct User)",
+            "numberOfBytes": "32"
+          },
+          "t_string_memory_ptr": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_string_storage": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_struct(Request)18_storage": {
+            "label": "struct Request",
+            "members": [
+              {
+                "label": "id",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "email",
+                "type": "t_string_storage",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "isSent",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "2"
+              }
+            ],
+            "numberOfBytes": "96"
+          },
+          "t_struct(User)11_storage": {
+            "label": "struct User",
+            "members": [
+              {
+                "label": "email",
+                "type": "t_string_storage",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "password",
+                "type": "t_string_storage",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "wallet",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "uuid",
+                "type": "t_array(t_string_storage)dyn_storage",
+                "offset": 0,
+                "slot": "3"
+              }
+            ],
+            "numberOfBytes": "128"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          }
+        }
+      }
+    },
+    "80d8721cd06b268dacf10b8743c9a25289f52181f4edfb738939ee3599139b12": {
+      "address": "0x3EC0AACCd69c18d09d1e818Ea8a8012767913893",
+      "txHash": "0xbb381e5f69230b3a8b7a19a0d7ea55f4e16f3cfb94f6d61c074bed02c57bb89b",
+      "layout": {
+        "solcVersion": "0.8.17",
+        "storage": [
+          {
+            "label": "usersMap",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_mapping(t_string_memory_ptr,t_struct(User)11_storage)",
+            "contract": "Contract",
+            "src": "contracts\\Contract.sol:17"
+          },
+          {
+            "label": "userRequests",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_array(t_struct(Request)18_storage)dyn_storage",
+            "contract": "Contract",
+            "src": "contracts\\Contract.sol:18"
+          },
+          {
+            "label": "requests",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_array(t_struct(Request)18_storage)dyn_storage",
+            "contract": "Contract",
+            "src": "contracts\\Contract.sol:19"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_string_storage)dyn_storage": {
+            "label": "string[]",
+            "numberOfBytes": "32"
+          },
+          "t_array(t_struct(Request)18_storage)dyn_storage": {
+            "label": "struct Request[]",
+            "numberOfBytes": "32"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_string_memory_ptr,t_struct(User)11_storage)": {
+            "label": "mapping(string => struct User)",
+            "numberOfBytes": "32"
+          },
+          "t_string_memory_ptr": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_string_storage": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_struct(Request)18_storage": {
+            "label": "struct Request",
+            "members": [
+              {
+                "label": "id",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "email",
+                "type": "t_string_storage",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "isSent",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "2"
+              }
+            ],
+            "numberOfBytes": "96"
+          },
+          "t_struct(User)11_storage": {
+            "label": "struct User",
+            "members": [
+              {
+                "label": "email",
+                "type": "t_string_storage",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "password",
+                "type": "t_string_storage",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "wallet",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "uuid",
+                "type": "t_array(t_string_storage)dyn_storage",
+                "offset": 0,
+                "slot": "3"
+              }
+            ],
+            "numberOfBytes": "128"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          }
+        }
+      }
+    },
+    "62307a913204cea4e509b839d109ffbb39dae17b6e3c2d892305ab9c083a1f65": {
+      "address": "0x59E7eB74F94E925e100153E8eb4bCAC05068BDA9",
+      "txHash": "0xf3dffa7ffad6a43fb26a8eb4269d0713843b089777b51c4637ae99b7294ac778",
+      "layout": {
+        "solcVersion": "0.8.17",
+        "storage": [
+          {
+            "label": "usersMap",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_mapping(t_string_memory_ptr,t_struct(User)11_storage)",
+            "contract": "Contract",
+            "src": "contracts\\Contract.sol:17"
+          },
+          {
+            "label": "userRequests",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_array(t_struct(Request)18_storage)dyn_storage",
+            "contract": "Contract",
+            "src": "contracts\\Contract.sol:18"
+          },
+          {
+            "label": "requests",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_array(t_struct(Request)18_storage)dyn_storage",
+            "contract": "Contract",
+            "src": "contracts\\Contract.sol:19"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_string_storage)dyn_storage": {
+            "label": "string[]",
+            "numberOfBytes": "32"
+          },
+          "t_array(t_struct(Request)18_storage)dyn_storage": {
+            "label": "struct Request[]",
+            "numberOfBytes": "32"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_string_memory_ptr,t_struct(User)11_storage)": {
+            "label": "mapping(string => struct User)",
+            "numberOfBytes": "32"
+          },
+          "t_string_memory_ptr": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_string_storage": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_struct(Request)18_storage": {
+            "label": "struct Request",
+            "members": [
+              {
+                "label": "id",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "email",
+                "type": "t_string_storage",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "isSent",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "2"
+              }
+            ],
+            "numberOfBytes": "96"
+          },
+          "t_struct(User)11_storage": {
+            "label": "struct User",
+            "members": [
+              {
+                "label": "email",
+                "type": "t_string_storage",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "password",
+                "type": "t_string_storage",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "wallet",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "uuid",
+                "type": "t_array(t_string_storage)dyn_storage",
+                "offset": 0,
+                "slot": "3"
+              }
+            ],
+            "numberOfBytes": "128"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          }
+        }
+      }
+    },
+    "c862e3beef0c3067c3a6093817861a40050cce3d7df739ee8c9b82c5cca48949": {
+      "address": "0x49A1e45A7b49E269F6BC35Cd0afFd56a63E16f80",
+      "txHash": "0x9819527d8bea5ffa40f3acc5edf1e8f20c73e5b3fd207a42523cd51d38b8457c",
       "layout": {
         "solcVersion": "0.8.17",
         "storage": [

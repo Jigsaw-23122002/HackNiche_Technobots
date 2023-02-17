@@ -1,13 +1,13 @@
-import { Contract, providers, utils } from "ethers";
 import React, { useEffect, useRef, useState } from "react";
+import { Contract, providers, utils } from "ethers";
 import Web3Modal from "web3modal";
-import { CONTRACT_ABI, CONTRACT_ADDRESS } from "../constants";
+import { CONTRACT_ADDRESS, CONTRACT_ABI } from "../constants";
 
-let files = [];
-export default function Request() {
+export default function Login() {
   const web3ModalRef = useRef();
-  const [auth, setAuth] = useState(null);
   const [walletConnected, setWalletConnected] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const getProviderOrSigner = async (needSigner = false) => {
     const provider = await web3ModalRef.current.connect();
@@ -26,48 +26,48 @@ export default function Request() {
     return web3Provider;
   };
 
-  const requestDoc = async () => {
+  const login = async () => {
     try {
       const signer = await getProviderOrSigner(true);
       const contract = new Contract(CONTRACT_ADDRESS, CONTRACT_ABI, signer);
-      const result = contract.requestDocsByUser("harshnag23@gmail.com");
+      const result = await contract.signInUser(email, password);
+      if (result) {
+        localStorage.setItem("email", email);
+      }
       console.log(result);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  const connectWallet = async () => {
-    try {
-      await getProviderOrSigner();
-      setWalletConnected(true);
     } catch (err) {
-      console.error(err);
+      console.log(err);
     }
   };
-
   useEffect(() => {
-    setAuth(localStorage.getItem("email"));
     if (!walletConnected) {
       web3ModalRef.current = new Web3Modal({
         network: "alfajores",
         providerOptions: {},
         disableInjectedProvider: false,
       });
-      connectWallet();
     }
   }, []);
-  if (auth === null) {
-    return (
-      <>
-        <div>Require to login</div>
-      </>
-    );
-  } else {
-    return (
-      <div>
-        <button onClick={() => requestDoc()}>Request</button>
-      </div>
-    );
-  }
+
+  return (
+    <div>
+      <input
+        value={email}
+        type="text"
+        onChange={(e) => setEmail(e.target.value)}
+      />
+      <input
+        value={password}
+        type="text"
+        onChange={(e) => setPassword(e.target.value)}
+      />
+      <button
+        onClick={() => {
+          login();
+        }}
+      >
+        login
+      </button>
+    </div>
+  );
 }

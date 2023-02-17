@@ -1,12 +1,13 @@
+import axios from "axios";
 import { Contract, providers, utils } from "ethers";
 import React, { useEffect, useRef, useState } from "react";
 import Web3Modal from "web3modal";
 import { CONTRACT_ABI, CONTRACT_ADDRESS } from "../constants";
 
-let files = [];
-export default function Request() {
+export default function register() {
   const web3ModalRef = useRef();
-  const [auth, setAuth] = useState(null);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [walletConnected, setWalletConnected] = useState(false);
 
   const getProviderOrSigner = async (needSigner = false) => {
@@ -26,12 +27,14 @@ export default function Request() {
     return web3Provider;
   };
 
-  const requestDoc = async () => {
+  const register = async () => {
+    const res = await axios.get("/api/register");
+    console.log(res);
     try {
       const signer = await getProviderOrSigner(true);
       const contract = new Contract(CONTRACT_ADDRESS, CONTRACT_ABI, signer);
-      const result = contract.requestDocsByUser("harshnag23@gmail.com");
-      console.log(result);
+      const user = await contract.registerUser(email, password);
+      console.log(user);
     } catch (error) {
       console.log(error);
     }
@@ -47,7 +50,6 @@ export default function Request() {
   };
 
   useEffect(() => {
-    setAuth(localStorage.getItem("email"));
     if (!walletConnected) {
       web3ModalRef.current = new Web3Modal({
         network: "alfajores",
@@ -57,17 +59,26 @@ export default function Request() {
       connectWallet();
     }
   }, []);
-  if (auth === null) {
-    return (
-      <>
-        <div>Require to login</div>
-      </>
-    );
-  } else {
-    return (
-      <div>
-        <button onClick={() => requestDoc()}>Request</button>
-      </div>
-    );
-  }
+
+  return (
+    <div>
+      <input
+        value={email}
+        type="text"
+        onChange={(e) => setEmail(e.target.value)}
+      />
+      <input
+        value={password}
+        type="text"
+        onChange={(e) => setPassword(e.target.value)}
+      />
+      <button
+        onClick={() => {
+          register();
+        }}
+      >
+        Register
+      </button>
+    </div>
+  );
 }

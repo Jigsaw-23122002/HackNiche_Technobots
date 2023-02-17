@@ -20,11 +20,15 @@ contract Contract {
 
     function registerUser(string memory _email, string memory _password)
         public
+        returns (User memory)
     {
-        User memory u;
-        u.email = _email;
-        u.password = _password;
-        usersMap[_email] = u;
+        usersMap[_email] = User({
+            email: _email,
+            password: _password,
+            wallet: msg.sender,
+            uuid: new string[](0)
+        });
+        return usersMap[_email];
     }
 
     function signInUser(string memory _email, string memory _password)
@@ -33,8 +37,6 @@ contract Contract {
         returns (bool)
     {
         if (
-            keccak256(abi.encodePacked(usersMap[_email].email)) ==
-            keccak256(abi.encodePacked(_email)) &&
             keccak256(abi.encodePacked(usersMap[_email].password)) ==
             keccak256(abi.encodePacked(_password))
         ) {
@@ -49,10 +51,9 @@ contract Contract {
     }
 
     function requestDocsByUser(string memory _email) public {
-        Request memory r;
-        r.id = requests.length;
-        r.email = _email;
-        userRequests.push(r);
+        userRequests.push(
+            Request({id: requests.length, email: _email, isSent: false})
+        );
     }
 
     function getPendingRequests() public returns (Request[] memory) {
