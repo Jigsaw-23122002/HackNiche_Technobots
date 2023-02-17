@@ -1,0 +1,137 @@
+{
+  "manifestVersion": "3.2",
+  "admin": {
+    "address": "0x7d11e3680A86160FE62cd971a40B929CBbD3d0b4",
+    "txHash": "0x59405329e40480ada0208c3704b98eb1e4db1d3b47e2e62da6fe799b684d83ad"
+  },
+  "proxies": [
+    {
+      "address": "0x1b84ef5557C9731D277c148Bc1b9B661B4Ea7D4e",
+      "txHash": "0xdd1db73e1c6bfaf7c4b1767eaf1f458777563199cb05b03d6ee0dd714a29d964",
+      "kind": "transparent"
+    }
+  ],
+  "impls": {
+    "1945c81e3f8663d0fd38f4b6ce7934283b169d453f02288e4008efc1a967b531": {
+      "address": "0x656Cadfc51E257888dd523F854284Efcada18590",
+      "txHash": "0x907a3f744720131c581536b709379d722a60e22606ad989a8c482c3f8ba84551",
+      "layout": {
+        "solcVersion": "0.8.17",
+        "storage": [
+          {
+            "label": "usersMap",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_mapping(t_string_memory_ptr,t_struct(User)11_storage)",
+            "contract": "Contract",
+            "src": "contracts\\Contract.sol:17"
+          },
+          {
+            "label": "userRequests",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_array(t_struct(Request)18_storage)dyn_storage",
+            "contract": "Contract",
+            "src": "contracts\\Contract.sol:18"
+          },
+          {
+            "label": "requests",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_array(t_struct(Request)18_storage)dyn_storage",
+            "contract": "Contract",
+            "src": "contracts\\Contract.sol:19"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_string_storage)dyn_storage": {
+            "label": "string[]",
+            "numberOfBytes": "32"
+          },
+          "t_array(t_struct(Request)18_storage)dyn_storage": {
+            "label": "struct Request[]",
+            "numberOfBytes": "32"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_string_memory_ptr,t_struct(User)11_storage)": {
+            "label": "mapping(string => struct User)",
+            "numberOfBytes": "32"
+          },
+          "t_string_memory_ptr": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_string_storage": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_struct(Request)18_storage": {
+            "label": "struct Request",
+            "members": [
+              {
+                "label": "id",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "email",
+                "type": "t_string_storage",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "isSent",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "2"
+              }
+            ],
+            "numberOfBytes": "96"
+          },
+          "t_struct(User)11_storage": {
+            "label": "struct User",
+            "members": [
+              {
+                "label": "email",
+                "type": "t_string_storage",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "password",
+                "type": "t_string_storage",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "wallet",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "uuid",
+                "type": "t_array(t_string_storage)dyn_storage",
+                "offset": 0,
+                "slot": "3"
+              }
+            ],
+            "numberOfBytes": "128"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          }
+        }
+      }
+    }
+  }
+}
