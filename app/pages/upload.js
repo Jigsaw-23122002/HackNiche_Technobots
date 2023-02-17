@@ -3,6 +3,9 @@ import SVG from "react-inlinesvg";
 import { useDropzone } from "react-dropzone";
 import axios from "axios";
 import { convertPdfToImages } from "../Jsx";
+import { useEffect, useRef, useState } from "react";
+import Web3Modal from "web3modal";
+import { providers, Contract } from "ethers";
 
 let files = [];
 
