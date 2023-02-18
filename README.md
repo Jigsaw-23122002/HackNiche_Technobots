@@ -13,6 +13,25 @@ Biconomy has been used to implement Gasless transactions and IPFS to store the d
 
 ![image](https://user-images.githubusercontent.com/84740927/219829341-b5531b04-b74d-47b8-8e01-5d77de7325a9.png)
 
+![Screenshot from 2023-02-18 08-07-08](https://user-images.githubusercontent.com/84779934/219836158-43d7036b-7e5a-49a9-9d58-273abfa128cc.png)
+![Screenshot from 2023-02-18 08-07-14](https://user-images.githubusercontent.com/84779934/219836218-4910195d-7199-4d9e-be32-8cced5946689.png)
+![Screenshot from 2023-02-18 08-25-40](https://user-images.githubusercontent.com/84779934/219836300-f42bf879-cba2-4a7b-96ab-09a1838a8453.png)
+![Screenshot from 2023-02-18 08-32-26](https://user-images.githubusercontent.com/84779934/219836385-9d9c71f8-0ea6-4da4-8735-3afe64fe52dd.png)
+![Screenshot from 2023-02-18 08-40-16](https://user-images.githubusercontent.com/84779934/219836438-86e675a2-c824-4d24-9d54-b3cb2f98ff94.png)
+![Screenshot from 2023-02-18 08-40-50](https://user-images.githubusercontent.com/84779934/219836620-5e55148e-30cf-444e-ad9a-cc826bddecf4.png)
+![Screenshot from 2023-02-18 08-42-13](https://user-images.githubusercontent.com/84779934/219836713-83060a64-a2e9-489b-8430-0fa125df26de.png)
+![Screenshot from 2023-02-18 08-47-38](https://user-images.githubusercontent.com/84779934/219836753-48d02985-be37-4363-a0e8-fe79cf187c0f.png)
+
+
+## Flowchart
+
+
+![image](https://user-images.githubusercontent.com/84779934/219837151-3a25b242-bffd-45b9-813d-cc2eaf494d2f.png)
+
+## Workflow (Two Approaches)
+
+
+![Untitled Diagram](https://user-images.githubusercontent.com/84779934/219836934-c848c37d-85f6-4244-a3ff-9e964b9d595d.png)
 
 ## Problems with the current system
 
