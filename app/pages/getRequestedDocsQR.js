@@ -27,7 +27,7 @@ export default function Request() {
     getRequestedDocs();
   }, []);
 
-  if (user === null) {
+  if (!user) {
     const frontmatter = { title: "Login required" };
     const content = "content";
     const data = {

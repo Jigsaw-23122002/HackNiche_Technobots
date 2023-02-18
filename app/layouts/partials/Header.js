@@ -6,17 +6,58 @@ import menu2 from "@config/menu2.json";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
+import Web3Modal from "web3modal";
+import { useEffect, useRef } from "react";
 
 const Header = () => {
   //router
   const router = useRouter();
+  const web3ModalRef = useRef();
   const [navOpen, setNavOpen] = useState(false);
+  const [walletConnected, setWalletConnected] = useState(false);
   const [initialRenderComplete, setInitialRenderComplete] =
     React.useState(false);
   React.useEffect(() => {
     // Updating a state causes a re-render
     setInitialRenderComplete(true);
   }, []);
+
+  const getProviderOrSigner = async (needSigner = false) => {
+    const provider = await web3ModalRef.current.connect();
+    const web3Provider = new providers.Web3Provider(provider);
+    const { chainId } = await web3Provider.getNetwork();
+
+    if (chainId !== 44787) {
+      window.alert("Change the network to Celo");
+      throw new Error("Change network to Celo");
+    }
+
+    if (needSigner) {
+      const signer = web3Provider.getSigner();
+      return signer;
+    }
+    return web3Provider;
+  };
+
+  const connectWallet = async () => {
+    try {
+      await getProviderOrSigner();
+      setWalletConnected(true);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  useEffect(() => {
+    if (!walletConnected) {
+      web3ModalRef.current = new Web3Modal({
+        network: "goerli",
+        providerOptions: {},
+        disableInjectedProvider: false,
+      });
+    }
+  }, []);
+
   // distructuring the main menu from menu object
   if (initialRenderComplete && typeof window !== "undefined") {
     if (localStorage.getItem("userType") === null) {
@@ -122,10 +163,13 @@ const Header = () => {
               </ul>
             </div>
             {enable && (
-              <div className="d-flex order-1 ml-auto hidden min-w-[200px] items-center justify-end md:order-2 md:ml-0 md:flex">
+              <div
+                className="d-flex order-1 ml-auto hidden min-w-[200px] items-center justify-end md:order-2 md:ml-0 md:flex"
+                onClick={() => connectWallet()}
+              >
                 <Link
                   className="btn btn-primary z-0 py-[14px]"
-                  href={link}
+                  href={`#`}
                   rel=""
                 >
                   {label}
@@ -238,10 +282,13 @@ const Header = () => {
               </ul>
             </div>
             {enable && (
-              <div className="d-flex order-1 ml-auto hidden min-w-[200px] items-center justify-end md:order-2 md:ml-0 md:flex">
+              <div
+                className="d-flex order-1 ml-auto hidden min-w-[200px] items-center justify-end md:order-2 md:ml-0 md:flex"
+                onClick={() => connectWallet()}
+              >
                 <Link
                   className="btn btn-primary z-0 py-[14px]"
-                  href={link}
+                  href={`#`}
                   rel=""
                 >
                   {label}
@@ -354,10 +401,13 @@ const Header = () => {
               </ul>
             </div>
             {enable && (
-              <div className="d-flex order-1 ml-auto hidden min-w-[200px] items-center justify-end md:order-2 md:ml-0 md:flex">
+              <div
+                className="d-flex order-1 ml-auto hidden min-w-[200px] items-center justify-end md:order-2 md:ml-0 md:flex"
+                onClick={() => connectWallet()}
+              >
                 <Link
                   className="btn btn-primary z-0 py-[14px]"
-                  href={link}
+                  href={`#`}
                   rel=""
                 >
                   {label}
