@@ -82,23 +82,19 @@ export default function Home() {
 
   const getQrcode = async () => {
     try {
-<<<<<<< HEAD
-      const res = await axios.get("https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=smit");
+      const res = await axios.get(
+        "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=smit"
+      );
       await setResponse(res.data);
       console.log("response", response);
-      console.log("response", typeof(res.data));
-      
-      files[0] = await convertPdfToImages(files[0], "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=smit");
-      console.log(files);
-      const pdf=files[0];
+      console.log("response", typeof res.data);
 
-=======
-      const res = await axios.get("api/qrcode/", {
-        params: { input: `https://${document_cid}.ipfs.w3s.link/${filename}` },
-      });
-      setResponse(res.data);
-      getUuid(res.data);
->>>>>>> f6050624921acd9921a039adaaf053bcdb9066e4
+      files[0] = await convertPdfToImages(
+        files[0],
+        "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=smit"
+      );
+      console.log(files);
+      const pdf = files[0];
     } catch (error) {
       console.log(error);
     }

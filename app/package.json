@@ -31,23 +31,13 @@
     "react-gtm-module": "^2.0.11",
     "react-icons": "^4.7.1",
     "react-inlinesvg": "^3.0.1",
-<<<<<<< HEAD
+
     "react-pdf": "^6.2.2",
-    "web3.storage": "^4.4.0",
-    "worker-loader": "^3.0.8"
-=======
+    "worker-loader": "^3.0.8",
     "svg-to-img": "^2.0.9",
     "web3": "^1.8.2",
     "web3.storage": "^4.4.0",
-    "web3modal": "^1.9.12",
-    "react-lite-youtube-embed": "^2.3.52",
-    "react-router-dom": "^6.8.1",
-    "rehype-slug": "^5.1.0",
-    "remark-gfm": "^3.0.1",
-    "sass": "^1.58.2",
-    "swiper": "^8.4.5",
-    "tailwind-bootstrap-grid": "^5.0.1"
->>>>>>> f6050624921acd9921a039adaaf053bcdb9066e4
+    "web3modal": "^1.9.12"
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.3",
