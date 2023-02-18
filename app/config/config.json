@@ -1,0 +1,36 @@
+{
+  "site": {
+    "title": "Digi Identity",
+    "base_url": "/",
+    "favicon": "/images/favicon.png",
+    "logo": "/images/logo2.png",
+    "logo_width": "100",
+    "logo_height": "24",
+    "logo_text": "Digi-Identity"
+  },
+
+  "settings": {
+    "pagination": 4,
+    "summary_length": 200,
+    "blog_folder": "blogs"
+  },
+
+  "nav_button": {
+    "enable": true,
+    "label": "Connect Wallet",
+    "link": "/login"
+  },
+
+  "params": {
+    "contact_form_action": "",
+    "tag_manager_id": "",
+    "footer_content": "Online Verification of Certificates using Blockchain",
+    "copyright": "Designed and Developed By [Themefisher](https://themefisher.com/)"
+  },
+
+  "metadata": {
+    "meta_author": "Themefisher",
+    "meta_image": "",
+    "meta_description": "A SAAS template for nextjs"
+  }
+}

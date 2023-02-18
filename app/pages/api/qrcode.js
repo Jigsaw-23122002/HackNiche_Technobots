@@ -9,12 +9,12 @@ export default async function handler(req, res) {
         text: req.query.input,
         validate: "true",
         size: "150",
-        type: "svg",
-        level: "M",
+        type: "svg", // type: svg, png etc
+        level: "M", // level of validation
       },
       headers: {
-        "X-RapidAPI-Key": "0afbe986b8msh43b88b81e1fea1ap1350f5jsn337b6d720805",
-        "X-RapidAPI-Host": "qrcodeutils.p.rapidapi.com",
+        "x-rapidapi-host": "qrcodeutils.p.rapidapi.com",
+        "x-rapidapi-key": process.env.NEXT_PUBLIC_RAPIDAPI_KEY,
       },
     };
     axios
