@@ -5,8 +5,11 @@ import { CONTRACT_ADDRESS, CONTRACT_ABI } from "../constants";
 import { redirect } from "react-router-dom";
 import Base from "@layouts/Baseof";
 
+import { useRouter } from "next/router";
+
 export default function Login() {
   const web3ModalRef = useRef();
+  const router = useRouter();
   const [walletConnected, setWalletConnected] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -64,7 +67,7 @@ export default function Login() {
         if (result) {
           localStorage.setItem("userType", type);
           localStorage.setItem("email", email);
-          redirect("/");
+          router.push("/");
         }
         console.log(result);
       } else {
@@ -72,6 +75,7 @@ export default function Login() {
           localStorage.setItem("userType", type);
           localStorage.setItem("email", email);
           setStatus("Authentication successful.");
+          router.push("/");
         } else {
           setStatus("Invalid institution credentials");
         }

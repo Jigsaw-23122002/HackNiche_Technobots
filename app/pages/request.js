@@ -27,7 +27,7 @@ export default function Request() {
     setUser(localStorage.getItem("email"));
   }, []);
 
-  if (user === null) {
+  if (!user) {
     return (
       <>
         <div>Require to login</div>

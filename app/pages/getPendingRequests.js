@@ -32,7 +32,7 @@ export default function Request() {
     setUser(localStorage.getItem("email"));
     getPendingRequests();
   }, []);
-  if (user === null) {
+  if (!user) {
     return (
       <>
         <Base>
