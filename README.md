@@ -31,7 +31,7 @@ Biconomy has been used to implement Gasless transactions and IPFS to store the d
 - Biconomy for gasless transactions.
 
 ## Architecture
-![flowchart](https://user-images.githubusercontent.com/59064326/212481527-3ca8d373-fb77-46fb-8518-52991ce82ec5.png)
+
 
 ## Features
 - Two Factor Authentication
