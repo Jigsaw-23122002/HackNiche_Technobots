@@ -5,20 +5,20 @@
       "url": "/"
     },
     {
+      "name": "Request Document",
+      "url": "/blogs"
+    },
+    {
+      "name": "Made requests",
+      "url": "/getRequestedDocsQR"
+    },
+    {
       "name": "Pricing",
       "url": "/pricing"
     },
     {
       "name": "Contact",
       "url": "/contact"
-    },
-    {
-      "name": "Login",
-      "url": "/login"
-    },
-    {
-      "name": "Signup",
-      "url": "/signup"
     },
     {
       "name": "FAQ",

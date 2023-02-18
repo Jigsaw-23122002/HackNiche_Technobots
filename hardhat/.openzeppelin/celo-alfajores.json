@@ -1,0 +1,612 @@
+{
+  "manifestVersion": "3.2",
+  "admin": {
+    "address": "0x38a499D62b321B2E2D921aC93727b6815BF66ED1",
+    "txHash": "0x75ceba418feb0cbb315bc472ee3258a22246dbc68ed8bd28529dc54e79586d78"
+  },
+  "proxies": [
+    {
+      "address": "0x4266Df500B859f6d29280EeB93176f5C069EDbEC",
+      "txHash": "0x3ab987a4b5028fede5f2654da24cadf3819a676e6783c0b4696532fb9fe06ce5",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x7504F87F697846aEA8cF08B193f53c224A9f4C44",
+      "txHash": "0xd0493f268e6fff1785595a99ecb495d318ad4f5e6568cd53cfa4403222c3de3b",
+      "kind": "transparent"
+    }
+  ],
+  "impls": {
+    "2ee42fae325f9a6f9f2b0bc18d1bbbbd941cd74cbd4bc2884dec2ec2447a3516": {
+      "address": "0xDEB0c892612A0c5f89CE17D877D77F49b64117fA",
+      "txHash": "0xf78720eb2ccdc7cdd67071f253988a79be9dc5cdf9b55de335bde7eb00d83b30",
+      "layout": {
+        "solcVersion": "0.8.17",
+        "storage": [
+          {
+            "label": "usersMap",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_mapping(t_string_memory_ptr,t_struct(User)11_storage)",
+            "contract": "Contract",
+            "src": "contracts\\Contract.sol:17"
+          },
+          {
+            "label": "requestCidMap",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_mapping(t_uint256,t_string_storage)",
+            "contract": "Contract",
+            "src": "contracts\\Contract.sol:18"
+          },
+          {
+            "label": "userRequests",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_array(t_struct(Request)18_storage)dyn_storage",
+            "contract": "Contract",
+            "src": "contracts\\Contract.sol:19"
+          },
+          {
+            "label": "requests",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_array(t_struct(Request)18_storage)dyn_storage",
+            "contract": "Contract",
+            "src": "contracts\\Contract.sol:20"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_string_storage)dyn_storage": {
+            "label": "string[]",
+            "numberOfBytes": "32"
+          },
+          "t_array(t_struct(Request)18_storage)dyn_storage": {
+            "label": "struct Request[]",
+            "numberOfBytes": "32"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_string_memory_ptr,t_struct(User)11_storage)": {
+            "label": "mapping(string => struct User)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_string_storage)": {
+            "label": "mapping(uint256 => string)",
+            "numberOfBytes": "32"
+          },
+          "t_string_memory_ptr": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_string_storage": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_struct(Request)18_storage": {
+            "label": "struct Request",
+            "members": [
+              {
+                "label": "id",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "email",
+                "type": "t_string_storage",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "isSent",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "2"
+              }
+            ],
+            "numberOfBytes": "96"
+          },
+          "t_struct(User)11_storage": {
+            "label": "struct User",
+            "members": [
+              {
+                "label": "email",
+                "type": "t_string_storage",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "password",
+                "type": "t_string_storage",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "wallet",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "uuid",
+                "type": "t_array(t_string_storage)dyn_storage",
+                "offset": 0,
+                "slot": "3"
+              }
+            ],
+            "numberOfBytes": "128"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          }
+        }
+      }
+    },
+    "42fddd124bda698cdc6b48aa4a4184133e4c7fbea3f69a1cd3b9f0826dacbb25": {
+      "address": "0xAE4B5F8eE7AD23c165304F2681115762FFAcb2df",
+      "txHash": "0x36a45aac714973e85289ec58cb46bc7aea007b2af6f9de11b8234ebe5e10b478",
+      "layout": {
+        "solcVersion": "0.8.17",
+        "storage": [
+          {
+            "label": "usersMap",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_mapping(t_string_memory_ptr,t_struct(User)11_storage)",
+            "contract": "Contract",
+            "src": "contracts\\Contract.sol:17"
+          },
+          {
+            "label": "requestCidMap",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_mapping(t_uint256,t_string_storage)",
+            "contract": "Contract",
+            "src": "contracts\\Contract.sol:18"
+          },
+          {
+            "label": "userRequests",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_array(t_struct(Request)18_storage)dyn_storage",
+            "contract": "Contract",
+            "src": "contracts\\Contract.sol:19"
+          },
+          {
+            "label": "requests",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_array(t_struct(Request)18_storage)dyn_storage",
+            "contract": "Contract",
+            "src": "contracts\\Contract.sol:20"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_string_storage)dyn_storage": {
+            "label": "string[]",
+            "numberOfBytes": "32"
+          },
+          "t_array(t_struct(Request)18_storage)dyn_storage": {
+            "label": "struct Request[]",
+            "numberOfBytes": "32"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_string_memory_ptr,t_struct(User)11_storage)": {
+            "label": "mapping(string => struct User)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_string_storage)": {
+            "label": "mapping(uint256 => string)",
+            "numberOfBytes": "32"
+          },
+          "t_string_memory_ptr": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_string_storage": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_struct(Request)18_storage": {
+            "label": "struct Request",
+            "members": [
+              {
+                "label": "id",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "email",
+                "type": "t_string_storage",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "isSent",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "2"
+              }
+            ],
+            "numberOfBytes": "96"
+          },
+          "t_struct(User)11_storage": {
+            "label": "struct User",
+            "members": [
+              {
+                "label": "email",
+                "type": "t_string_storage",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "password",
+                "type": "t_string_storage",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "wallet",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "uuid",
+                "type": "t_array(t_string_storage)dyn_storage",
+                "offset": 0,
+                "slot": "3"
+              }
+            ],
+            "numberOfBytes": "128"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          }
+        }
+      }
+    },
+    "dd17859883b06d324ff0f95712961440bbe3fb22ffe108be7615fe549a9df455": {
+      "address": "0xaf589781a8D8b7A71F23E57c6c321758Bc03F167",
+      "txHash": "0x394c2dd5bab918c92cbcc05137fae53d69b6776bba238bb8d8a396afae16d76a",
+      "layout": {
+        "solcVersion": "0.8.17",
+        "storage": [
+          {
+            "label": "usersMap",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_mapping(t_string_memory_ptr,t_struct(User)11_storage)",
+            "contract": "Contract",
+            "src": "contracts\\Contract.sol:17"
+          },
+          {
+            "label": "requestCidMap",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_mapping(t_uint256,t_string_storage)",
+            "contract": "Contract",
+            "src": "contracts\\Contract.sol:18"
+          },
+          {
+            "label": "userRequests",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_array(t_struct(Request)18_storage)dyn_storage",
+            "contract": "Contract",
+            "src": "contracts\\Contract.sol:19"
+          },
+          {
+            "label": "requests",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_array(t_struct(Request)18_storage)dyn_storage",
+            "contract": "Contract",
+            "src": "contracts\\Contract.sol:20"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_string_storage)dyn_storage": {
+            "label": "string[]",
+            "numberOfBytes": "32"
+          },
+          "t_array(t_struct(Request)18_storage)dyn_storage": {
+            "label": "struct Request[]",
+            "numberOfBytes": "32"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_string_memory_ptr,t_struct(User)11_storage)": {
+            "label": "mapping(string => struct User)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_string_storage)": {
+            "label": "mapping(uint256 => string)",
+            "numberOfBytes": "32"
+          },
+          "t_string_memory_ptr": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_string_storage": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_struct(Request)18_storage": {
+            "label": "struct Request",
+            "members": [
+              {
+                "label": "id",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "email",
+                "type": "t_string_storage",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "isSent",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "2"
+              }
+            ],
+            "numberOfBytes": "96"
+          },
+          "t_struct(User)11_storage": {
+            "label": "struct User",
+            "members": [
+              {
+                "label": "email",
+                "type": "t_string_storage",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "password",
+                "type": "t_string_storage",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "wallet",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "uuid",
+                "type": "t_array(t_string_storage)dyn_storage",
+                "offset": 0,
+                "slot": "3"
+              }
+            ],
+            "numberOfBytes": "128"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          }
+        }
+      }
+    },
+    "5dc3d378d54531921eda845672927fee465ad98ad77dc4728af74a387b5ced03": {
+      "address": "0x9d7B3B7F55743bBA41cc4Cc21d7D1660e43411e1",
+      "txHash": "0x5da6af984ae0eb44095f24a7e3addc8e511ca8307790555925dd5d7b895309ee",
+      "layout": {
+        "solcVersion": "0.8.17",
+        "storage": [
+          {
+            "label": "usersMap",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_mapping(t_string_memory_ptr,t_struct(User)11_storage)",
+            "contract": "Contract",
+            "src": "contracts\\Contract.sol:17"
+          },
+          {
+            "label": "requestCidMap",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_mapping(t_uint256,t_string_storage)",
+            "contract": "Contract",
+            "src": "contracts\\Contract.sol:18"
+          },
+          {
+            "label": "userRequests",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_array(t_struct(Request)18_storage)dyn_storage",
+            "contract": "Contract",
+            "src": "contracts\\Contract.sol:19"
+          },
+          {
+            "label": "requests",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_array(t_struct(Request)18_storage)dyn_storage",
+            "contract": "Contract",
+            "src": "contracts\\Contract.sol:20"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_string_storage)dyn_storage": {
+            "label": "string[]",
+            "numberOfBytes": "32"
+          },
+          "t_array(t_struct(Request)18_storage)dyn_storage": {
+            "label": "struct Request[]",
+            "numberOfBytes": "32"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_string_memory_ptr,t_struct(User)11_storage)": {
+            "label": "mapping(string => struct User)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_string_storage)": {
+            "label": "mapping(uint256 => string)",
+            "numberOfBytes": "32"
+          },
+          "t_string_memory_ptr": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_string_storage": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_struct(Request)18_storage": {
+            "label": "struct Request",
+            "members": [
+              {
+                "label": "id",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "email",
+                "type": "t_string_storage",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "isSent",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "2"
+              }
+            ],
+            "numberOfBytes": "96"
+          },
+          "t_struct(User)11_storage": {
+            "label": "struct User",
+            "members": [
+              {
+                "label": "email",
+                "type": "t_string_storage",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "password",
+                "type": "t_string_storage",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "wallet",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "uuid",
+                "type": "t_array(t_string_storage)dyn_storage",
+                "offset": 0,
+                "slot": "3"
+              }
+            ],
+            "numberOfBytes": "128"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          }
+        }
+      }
+    },
+    "d7f24d8f2c3d473d3d6faaa2df5c78e712e253dab4ae4697503910492cc59581": {
+      "address": "0x21586f1afF4fc7Df4E648044ca638eb35811ceF4",
+      "txHash": "0x758251cfbe9842166b68f3aff01e43b9f1ec4320c5e79d49efa9f6ab4f764f69",
+      "layout": {
+        "solcVersion": "0.8.17",
+        "storage": [
+          {
+            "label": "usersMap",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_mapping(t_string_memory_ptr,t_struct(User)8_storage)",
+            "contract": "Contract",
+            "src": "contracts\\Contract.sol:11"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_mapping(t_string_memory_ptr,t_struct(User)8_storage)": {
+            "label": "mapping(string => struct User)",
+            "numberOfBytes": "32"
+          },
+          "t_string_memory_ptr": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_string_storage": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_struct(User)8_storage": {
+            "label": "struct User",
+            "members": [
+              {
+                "label": "email",
+                "type": "t_string_storage",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "password",
+                "type": "t_string_storage",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "wallet",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "2"
+              }
+            ],
+            "numberOfBytes": "96"
+          }
+        }
+      }
+    }
+  }
+}

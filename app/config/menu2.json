@@ -5,20 +5,16 @@
       "url": "/"
     },
     {
+      "name": "Pending requests",
+      "url": "/getPendingRequests"
+    },
+    {
       "name": "Pricing",
       "url": "/pricing"
     },
     {
       "name": "Contact",
       "url": "/contact"
-    },
-    {
-      "name": "Login",
-      "url": "/login"
-    },
-    {
-      "name": "Signup",
-      "url": "/signup"
     },
     {
       "name": "FAQ",

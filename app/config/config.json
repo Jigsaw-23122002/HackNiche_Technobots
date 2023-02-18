@@ -3,9 +3,9 @@
     "title": "Digi Identity",
     "base_url": "/",
     "favicon": "/images/favicon.png",
-    "logo": "/images/logo.png",
-    "logo_width": "200",
-    "logo_height": "48",
+    "logo": "/images/logo2.png",
+    "logo_width": "100",
+    "logo_height": "24",
     "logo_text": "Digi-Identity"
   },
 
@@ -17,14 +17,14 @@
 
   "nav_button": {
     "enable": true,
-    "label": "Get Started",
+    "label": "Connect Wallet",
     "link": "/login"
   },
 
   "params": {
     "contact_form_action": "",
     "tag_manager_id": "",
-    "footer_content": "Lorem ipsum dolor sit amet, consectetur elit. Consjat tristique eget amet, tempus eu at cttur.",
+    "footer_content": "Online Verification of Certificates using Blockchain",
     "copyright": "Designed and Developed By [Themefisher](https://themefisher.com/)"
   },
 

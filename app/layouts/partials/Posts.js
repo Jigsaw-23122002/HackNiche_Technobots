@@ -2,9 +2,42 @@ import config from "@config/config.json";
 import { plainify } from "@lib/utils/textConverter";
 import Image from "next/image";
 import Link from "next/link";
+import { createClient } from "@supabase/supabase-js";
+import { useEffect, useState } from "react";
 
 const Posts = ({ posts }) => {
   const { blog_folder, summary_length } = config.settings;
+  const [status, setStatus] = useState("");
+  const supabase = createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+  );
+
+  const requestDoc = async () => {
+    const { data, error } = await supabase
+      .from("requests")
+      .insert({ email: localStorage.getItem("email"), isSent: false, svg: "" })
+      .select();
+    console.log(data);
+    console.log(error);
+  };
+
+  const requestStatus = async () => {
+    const result = await supabase
+      .from("requests")
+      .select()
+      .eq("email", localStorage.getItem("email"));
+    if (result.data.length === 0) {
+      setStatus("Request");
+    } else {
+      setStatus("Requested");
+    }
+  };
+
+  useEffect(() => {
+    requestStatus();
+  }, []);
+
   return (
     <div className="section row pb-0">
       <div className="col-12 pb-12 lg:pb-24">
@@ -37,44 +70,17 @@ const Posts = ({ posts }) => {
               )}
             </p>
             <Link
+              aria-disabled={status == "Requested"}
               className="btn btn-primary mt-4"
-              href={`/${blog_folder}/${posts[0].slug}`}
+              href={``}
               rel=""
+              onClick={() => requestDoc()}
             >
-              Read More
+              {status}
             </Link>
           </div>
         </div>
       </div>
-      {posts.slice(1).map((post, i) => (
-        <div key={`key-${i}`} className="col-12 mb-8 sm:col-6 lg:col-4">
-          {post.frontmatter.image && (
-            <Image
-              className="rounded-lg"
-              src={post.frontmatter.image}
-              alt={post.frontmatter.title}
-              width={i === 0 ? "925" : "445"}
-              height={i === 0 ? "475" : "230"}
-            />
-          )}
-          <h2 className="h3 mb-2 mt-4">
-            <Link
-              href={`/${blog_folder}/${post.slug}`}
-              className="block hover:text-primary"
-            >
-              {post.frontmatter.title}
-            </Link>
-          </h2>
-          <p className="text-text">{post.frontmatter.desc}</p>
-          <Link
-            className="btn btn-primary mt-4"
-            href={`/${blog_folder}/${post.slug}`}
-            rel=""
-          >
-            Read More
-          </Link>
-        </div>
-      ))}
     </div>
   );
 };

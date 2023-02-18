@@ -11,24 +11,24 @@ banner:
 feature: 
   title: Something You Need To Know
   features:
-  - name: "Clean Code"
+  - name: "Decentralization"
     icon: "/images/code.svg"
-    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit quam nihil"
-  - name: "Object Oriented"
+    content: "Instead of relying on a single central authority to manage and verify transactions, blockchain uses a distributed network of nodes to verify and validate transactions."
+  - name: "Immutable"
     icon: "/images/oop.svg"
-    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit quam nihil"
-  - name: "24h Service"
+    content: "Once data is added to a blockchain, it cannot be changed or deleted."
+  - name: "Transparency"
     icon: "/images/user-clock.svg"
-    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit quam nihil"
-  - name: "Value for Money"
+    content: "All transactions on a blockchain are transparent and can be viewed by anyone on the network."
+  - name: "Security"
     icon: "/images/love.svg"
-    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit quam nihil"
-  - name: "Faster Response"
+    content: "It is nearly impossible to hack or compromise a blockchain network without control of a majority of its nodes."
+  - name: "Smart Contracts"
     icon: "/images/speedometer.svg"
-    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit quam nihil"
-  - name: "Cloud Support"
+    content: "Blockchain can support smart contracts, which are self-executing contracts that automatically execute the terms of an agreement when certain conditions are met. "
+  - name: "Cryptocurrency"
     icon: "/images/cloud.svg"
-    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit quam nihil"
+    content: "Blockchain technology is the foundation of many cryptocurrencies, such as Bitcoin and Ethereum. "
 
 # services
 services:
@@ -83,7 +83,7 @@ workflow:
 # call_to_action
 call_to_action:
   title: Ready to get started?
-  content: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat tristique eget amet, tempus eu at consecttur.
+  content: Verify Documents like you had never done before.
   image: '/images/cta.svg'
   button:
     enable: true
