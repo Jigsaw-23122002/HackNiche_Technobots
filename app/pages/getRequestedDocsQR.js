@@ -61,6 +61,7 @@ export default function Request() {
                   timestamp={data.created_at}
                   status={data.isSent}
                   image={data.svg}
+                  link={data.download_link}
                 />
               </div>
             );
