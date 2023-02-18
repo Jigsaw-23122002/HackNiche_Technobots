@@ -52,13 +52,13 @@ Biconomy has been used to implement Gasless transactions and IPFS to store the d
 
 
 ## Tech Stack
-- React
+- NextJS
 - Solidity
-- Biconomy
 - IPFS
 
 
 ## Future Scope
+- Perform Gasless Transactions using Biconomy
 - Mobile Application for students.
 - Support a larger number of document types.
 - Categorizing staffs into multipile levels.
