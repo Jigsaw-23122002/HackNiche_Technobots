@@ -89,4 +89,14 @@ contract Contract {
     function requestSatisfied(uint256 index) public {
         requests[index].isSent = true;
     }
+
+    function isVerifiedDocuments(string memory studentDoc,string memory IPFSDoc) public pure returns (bool){
+        if(keccak256(abi.encodePacked(studentDoc)) ==
+            keccak256(abi.encodePacked(IPFSDoc))){
+                return true;
+            }
+            else{
+                return false;
+            }
+    }
 }

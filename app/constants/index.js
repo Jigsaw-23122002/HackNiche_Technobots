@@ -1,162 +1,197 @@
-export const CONTRACT_ADDRESS = "0x1b84ef5557C9731D277c148Bc1b9B661B4Ea7D4e";
+export const CONTRACT_ADDRESS = "0x4266Df500B859f6d29280EeB93176f5C069EDbEC";
 export const CONTRACT_ABI = [
   {
-    inputs: [
+    "inputs": [
       {
-        internalType: "string",
-        name: "_email",
-        type: "string",
+        "internalType": "string",
+        "name": "_email",
+        "type": "string"
       },
       {
-        internalType: "address",
-        name: "_wallet",
-        type: "address",
-      },
+        "internalType": "address",
+        "name": "_wallet",
+        "type": "address"
+      }
     ],
-    name: "connectWallet",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
+    "name": "connectWallet",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
   },
   {
-    inputs: [],
-    name: "emptyRequests",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
+    "inputs": [],
+    "name": "emptyRequests",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
   },
   {
-    inputs: [],
-    name: "getPendingRequests",
-    outputs: [
+    "inputs": [],
+    "name": "getPendingRequests",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getRequests",
+    "outputs": [
       {
-        components: [
+        "components": [
           {
-            internalType: "uint256",
-            name: "id",
-            type: "uint256",
+            "internalType": "uint256",
+            "name": "id",
+            "type": "uint256"
           },
           {
-            internalType: "string",
-            name: "email",
-            type: "string",
+            "internalType": "string",
+            "name": "email",
+            "type": "string"
           },
           {
-            internalType: "bool",
-            name: "isSent",
-            type: "bool",
-          },
+            "internalType": "bool",
+            "name": "isSent",
+            "type": "bool"
+          }
         ],
-        internalType: "struct Request[]",
-        name: "",
-        type: "tuple[]",
-      },
+        "internalType": "struct Request[]",
+        "name": "",
+        "type": "tuple[]"
+      }
     ],
-    stateMutability: "nonpayable",
-    type: "function",
+    "stateMutability": "view",
+    "type": "function"
   },
   {
-    inputs: [
+    "inputs": [
       {
-        internalType: "string",
-        name: "_email",
-        type: "string",
+        "internalType": "string",
+        "name": "_email",
+        "type": "string"
       },
       {
-        internalType: "string",
-        name: "_password",
-        type: "string",
-      },
+        "internalType": "string",
+        "name": "_password",
+        "type": "string"
+      }
     ],
-    name: "registerUser",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [
+    "name": "registerUser",
+    "outputs": [
       {
-        internalType: "string",
-        name: "_email",
-        type: "string",
-      },
-    ],
-    name: "requestDocsByUser",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "uint256",
-        name: "index",
-        type: "uint256",
-      },
-    ],
-    name: "requestSatisfied",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "string",
-        name: "_email",
-        type: "string",
-      },
-      {
-        internalType: "string",
-        name: "_password",
-        type: "string",
-      },
-    ],
-    name: "signInUser",
-    outputs: [
-      {
-        internalType: "bool",
-        name: "",
-        type: "bool",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "string",
-        name: "_email",
-        type: "string",
-      },
-    ],
-    name: "userMadeRequests",
-    outputs: [
-      {
-        components: [
+        "components": [
           {
-            internalType: "uint256",
-            name: "id",
-            type: "uint256",
+            "internalType": "string",
+            "name": "email",
+            "type": "string"
           },
           {
-            internalType: "string",
-            name: "email",
-            type: "string",
+            "internalType": "string",
+            "name": "password",
+            "type": "string"
           },
           {
-            internalType: "bool",
-            name: "isSent",
-            type: "bool",
+            "internalType": "address",
+            "name": "wallet",
+            "type": "address"
           },
+          {
+            "internalType": "string[]",
+            "name": "uuid",
+            "type": "string[]"
+          }
         ],
-        internalType: "struct Request[]",
-        name: "",
-        type: "tuple[]",
-      },
+        "internalType": "struct User",
+        "name": "",
+        "type": "tuple"
+      }
     ],
-    stateMutability: "nonpayable",
-    type: "function",
+    "stateMutability": "nonpayable",
+    "type": "function"
   },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_email",
+        "type": "string"
+      }
+    ],
+    "name": "requestDocsByUser",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "index",
+        "type": "uint256"
+      }
+    ],
+    "name": "requestSatisfied",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_email",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_password",
+        "type": "string"
+      }
+    ],
+    "name": "signInUser",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_email",
+        "type": "string"
+      }
+    ],
+    "name": "userMadeRequests",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "id",
+            "type": "uint256"
+          },
+          {
+            "internalType": "string",
+            "name": "email",
+            "type": "string"
+          },
+          {
+            "internalType": "bool",
+            "name": "isSent",
+            "type": "bool"
+          }
+        ],
+        "internalType": "struct Request[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
 ];

@@ -2,15 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import SVG from "react-inlinesvg";
 import { useDropzone } from "react-dropzone";
-<<<<<<< HEAD
-import axios from "axios";
-import { convertPdfToImages } from "../Jsx";
-import { useEffect, useRef, useState } from "react";
-import Web3Modal from "web3modal";
-import { providers, Contract } from "ethers";
-=======
 import { Web3Storage } from "web3.storage";
->>>>>>> 81d39ce9b202f0eb506bfe1dff799dd6e2114267
 
 let files = [];
 let document_cid;
